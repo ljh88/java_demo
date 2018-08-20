@@ -19,6 +19,8 @@ public class Jdbc {
     		 System.out.println(resultSet.getString("name") + " " + resultSet.getString("address"));
     	 }
     	 
+    	 connection.close();
+    	 preparedStatement.close();
     	 
     	 
     	 

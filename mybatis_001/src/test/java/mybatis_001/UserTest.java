@@ -32,7 +32,7 @@ public class UserTest {
 		User user = userMapper.findUserById(1);
 		System.err.println(user);
 	}
-	@Test
+	//@Test
 	public void testFindUserByName() throws Exception {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
@@ -51,6 +51,8 @@ public class UserTest {
 		user.setAddress("ÂåÑô");
 		userMapper.insertUser(user);
 		sqlSession.commit();
+		sqlSession.rollback(true);
+		
 		sqlSession.close();
 	}
 	//@Test
